@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="task7.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+             <div class="col-sm-2"></div>
+             <div class="col-sm-8 mt-2">
+                <div class="card-heder bg-primary text-center"><h3>TO-DO LIST </h3></div>
+                <div class="card-body bg-light">
+                 <!-- tudo program body start -->
+                    <div ng-app="myapp">
+                        <div  ng-controller="mycontroller">
+                            <table>
+                                <td> <input type="text" class="form-control" placeholder="Enter your work" ng-model="work"></td>
+                             
+                                <td><input type="time" class="form-control"placeholder="Enter time" ng-model="time"></td>
+                                <td><button ng-click="savedata()" class="btn btn-success">Add</button></td>
+                            </table>
+                        
+                         <hr>
+                         <table border="1">
+                            <tr>
+                               <th >Check Box</th>
+                               <th >Today Work</th>
+                               <th >Time</th>
+                               <th >Delete</th>
+                            </tr>
+                            <tr ng-repeat="text in moredata">
+                                <td><input type="checkbox" class="form-control"></td>
+                                <td><input type="text" class="form-control" placeholder="{{text.work}}"></td>
+                                <td><input type="text" class="form-control" placeholder="{{text.date}}"></td>
+                                <td><button  class="btn btn-danger" ng-click="daletedata(data)">Delete</button></td>
+                                
+                            </tr>
+                         </table>
+                        </div>
+                    </div>
+                 
+
+            
+                    <!-- tudo program body end -->
+                    
+                </div>
+                <div class="card-footer bg-dark"></div>
+               </div>
+             <div class="col-sm-2"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
